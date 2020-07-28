@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:speed_design_1/components/item_builder.dart';
+import 'package:speed_design_1/screens/details/details_screen.dart';
 import "../components/tab_builder.dart";
 import "../models/products.dart";
 
@@ -23,9 +24,18 @@ class HomeScreen extends StatelessWidget {
                 child: GridView.builder(
                   itemCount: products.length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2, childAspectRatio: .75, crossAxisSpacing: 10, mainAxisSpacing: 20),
+                      crossAxisCount: 2,
+                      childAspectRatio: .75,
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 20),
                   itemBuilder: (context, index) => ItemBuilder(
                     product: products[index],
+                    press: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => DetailScreen(
+                                  product: products[index],
+                                ))),
                   ),
                 ),
               ),

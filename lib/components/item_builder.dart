@@ -13,60 +13,63 @@ class ItemBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Image.asset(product.imageUrl),
-            ),
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: <Widget>[
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          product.productName,
-                          style: Theme.of(context).textTheme.headline4,
-                        ),
-                        Text(product.units),
-                        Text(
-                          "\$${product.price}",
-                          style: Theme.of(context).textTheme.headline4,
-                        )
-                      ],
-                    ),
-                  ),
-                  Container(
-                    height: 40,
-                    width: 40,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10)),
-                    child: IconButton(
-                        onPressed: () {},
-                        icon: SvgPicture.asset("assets/icons/bag.svg")),
-                  )
-                ],
+    return GestureDetector(
+      onTap: press,
+      child: Container(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Image.asset(product.imageUrl),
               ),
-            ),
-          ],
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20.0, vertical: 0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: <Widget>[
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            product.productName,
+                            style: Theme.of(context).textTheme.headline4,
+                          ),
+                          Text(product.units),
+                          Text(
+                            "\$${product.price}",
+                            style: Theme.of(context).textTheme.headline4,
+                          )
+                        ],
+                      ),
+                    ),
+                    Container(
+                      height: 40,
+                      width: 40,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10)),
+                      child: IconButton(
+                          onPressed: () {},
+                          icon: SvgPicture.asset("assets/icons/bag.svg")),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
+        // height: 215,
+        // width: 180,
+        decoration: BoxDecoration(
+            color: product.bgColor, borderRadius: BorderRadius.circular(10)),
       ),
-      // height: 215,
-      // width: 180,
-      decoration: BoxDecoration(
-          color: product.bgColor, borderRadius: BorderRadius.circular(10)),
     );
   }
 }
