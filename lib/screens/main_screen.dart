@@ -1,18 +1,36 @@
 import "package:flutter/material.dart";
 import 'package:flutter_svg/flutter_svg.dart';
-import "../components/tab_builder.dart"; 
+import 'package:speed_design_1/components/item_builder.dart';
+import "../components/tab_builder.dart";
+import "../models/products.dart";
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: ListView(
+          child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           _customAppBar(),
           _addressChecker(context),
-          _customSearchBox(), 
-          CategoryBuilder(), 
+          _customSearchBox(),
+          CategoryBuilder(),
+          Expanded(
+            child: Container(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: GridView.builder(
+                  itemCount: products.length,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2, childAspectRatio: .75, crossAxisSpacing: 10, mainAxisSpacing: 20),
+                  itemBuilder: (context, index) => ItemBuilder(
+                    product: products[index],
+                  ),
+                ),
+              ),
+            ),
+          )
         ],
       )),
     );
