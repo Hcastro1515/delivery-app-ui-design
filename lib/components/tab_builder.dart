@@ -31,7 +31,7 @@ class _CategoryBuilderState extends State<CategoryBuilder> {
     return GestureDetector(
       onTap: () {
         setState(() {
-          selectedIndex = index; 
+          selectedIndex = index;
         });
       },
       child: Padding(
@@ -47,12 +47,15 @@ class _CategoryBuilderState extends State<CategoryBuilder> {
                       : Colors.grey[400],
                 )),
             Container(
+              decoration: BoxDecoration(
+                color: selectedIndex == index
+                    ? Theme.of(context).primaryColor
+                    : Colors.transparent,
+                borderRadius: BorderRadius.circular(10)
+              ),
               margin: EdgeInsets.only(top: 5),
               height: 2,
               width: 30,
-              color: selectedIndex == index
-                  ? Theme.of(context).primaryColor
-                  : Colors.transparent,
             )
           ],
         ),

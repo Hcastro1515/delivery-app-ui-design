@@ -99,6 +99,8 @@ class HomeScreen extends StatelessWidget {
               SizedBox(
                 width: 10,
               ),
+              //!finish this section on implementing the TextField
+              // TextField()
               Text("Search for food", style: TextStyle(fontSize: 16.0))
             ],
           ),
