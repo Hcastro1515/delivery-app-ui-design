@@ -5,9 +5,17 @@ class Product {
   int id;
   double price;
   Color bgColor;
+  String cal;
+  String prot;
+  String fat;
+  String carb;
 
   Product(
       {this.imageUrl,
+      this.cal,
+      this.prot,
+      this.fat,
+      this.carb,
       this.productName,
       this.units,
       this.description,
@@ -18,6 +26,10 @@ class Product {
 
 List<Product> products = [
   Product(
+      cal: "51",
+      prot: "1.2 g",
+      fat: "0.3 g",
+      carb: "12 g",
       imageUrl: "assets/images/peach.png",
       bgColor: Color(0xffFCEEE3),
       units: "1 lb",
@@ -26,6 +38,10 @@ List<Product> products = [
       id: 1,
       price: 2.99),
   Product(
+      cal: "99",
+      prot: "1.4 g",
+      fat: "0.6 g",
+      carb: "24.7 g",
       imageUrl: "assets/images/mango.png",
       units: "1 pc",
       bgColor: Color(0xffFFF9E3),
@@ -34,6 +50,10 @@ List<Product> products = [
       id: 2,
       price: 0.99),
   Product(
+      cal: "32",
+      prot: "0.7 g",
+      fat: "0.3 g",
+      carb: "7.7 g",
       imageUrl: "assets/images/strawberry.png",
       units: "1 lb",
       bgColor: Color(0xffFFEFEF),
@@ -42,6 +62,10 @@ List<Product> products = [
       id: 3,
       price: 3.99),
   Product(
+      cal: "42",
+      prot: "0.8 g",
+      fat: "0.4 g",
+      carb: "10 g",
       imageUrl: "assets/images/kiwi.png",
       bgColor: Color(0xffF1FAE1),
       productName: "Kiwi",
