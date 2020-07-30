@@ -1,6 +1,7 @@
-# speed_design_1
+# delivery-app-ui-design
 
-A new Flutter project.
+This project is based on a UI concept I saw on Dribbble. The app is not fully functional
+as it's only purpose is to recreate the UI. 
 
 ## Getting Started
 
